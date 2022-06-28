@@ -13,7 +13,7 @@ locals {
     } :
   v[k]]
   subnets_map = { for a in flatten(local.subnets) :
-  "${a.name}_${a.id}" => a }
+  "${a.name}_${a.id}" => a... }
 }
 
 resource "aws_fsx_backup" "example" {
@@ -21,7 +21,7 @@ resource "aws_fsx_backup" "example" {
 }
 
 resource "aws_fsx_windows_file_system" "example" {
-  active_directory_id = var.active_dir #AD not found
+  active_directory_id = var.active_directory_id 
   skip_final_backup   = true
   storage_capacity    = 32
   subnet_ids          = ["subnet-025a6640db819e5c3"]

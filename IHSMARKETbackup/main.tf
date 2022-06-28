@@ -1,4 +1,4 @@
-/*
+
 #####################################
 #############ACM#####################
 #####################################
@@ -42,7 +42,7 @@ module "window_tg" {
     Environment = var.environment
   }
 }
-*/
+
 #######################################################
 #######################AD#############################
 #######################################################
@@ -52,7 +52,7 @@ module "AD" {
   vpc_id = "vpc-051f93cde505028de"
   subnets= ["subnet-025a6640db819e5c3","subnet-0238e0324d77012ba"]
 }
-/*
+
 #######################################################
 #######################FSX#############################
 #######################################################
@@ -61,7 +61,7 @@ module "Window_fsX" {
   source               = "./modules/FSX"
   payload_fsx          = local.payload_fsx
   security_group_ids   = ["sg-0f64e0725446c2b40"]
-  active_dir           = module.AD.id
+  active_directory_id  = "d-9067b14ba6"
 
   tags = {
     Terraform   = "true"
@@ -100,6 +100,7 @@ module "dlm" {
     resourceType = "VOLUME"
     interval_unit = "HOURS"
 }
+
 
 #############################################################
 #####################Security Group##########################
@@ -201,4 +202,3 @@ module "Window_Waf" {
   web_acl_metric_name                 = "wafAppHelloWorld"
   web_acl_name                        = "app-hello-world"
 }
-*/

@@ -12,6 +12,6 @@ variable "tags" {
   default     = {}
 }
 
-variable "active_dir" {
+variable "active_directory_id" {
   type = string
 }

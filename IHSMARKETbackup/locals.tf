@@ -1,4 +1,5 @@
  locals {
+  /*
   payload_fsx = [
     {
       name = "phonepaix-${var.environment}-window-fsx"
@@ -14,7 +15,7 @@
         }
       ]
     }
- ]
+ ]*/
 
   payload_alb_cidr_rules = [
     {
@@ -27,7 +28,7 @@
     },
     {
       type        = "egress"
-      cidr_blocks = ["0.0.0.0/0"]
+      cidr_blocks = ["172.31.0.0/20"]
       from_port   = 80
       to_port     = 80
       protocol    = "tcp"
@@ -35,7 +36,7 @@
     },
     {
       type        = "egress"
-      cidr_blocks = ["0.0.0.0/0"]
+      cidr_blocks = ["172.31.0.0/20"]
       from_port   = 6002
       to_port     = 6002
       protocol    = "tcp"
@@ -43,7 +44,7 @@
     },
     {
       type        = "egress"
-      cidr_blocks = ["0.0.0.0/0"]
+      cidr_blocks = ["172.31.0.0/20"]
       from_port   = 8800
       to_port     = 8800
       protocol    = "tcp"
@@ -51,7 +52,7 @@
     },
     {
       type        = "egress"
-      cidr_blocks = ["0.0.0.0/0"]
+      cidr_blocks = ["172.31.0.0/20"]
       from_port   = 8016
       to_port     = 8016
       protocol    = "tcp"
@@ -59,7 +60,7 @@
     },
     {
       type        = "egress"
-      cidr_blocks = ["0.0.0.0/0"]
+      cidr_blocks = ["172.31.0.0/20"]
       from_port   = 8004
       to_port     = 8004
       protocol    = "tcp"
@@ -67,7 +68,7 @@
     },
     {
       type        = "egress"
-      cidr_blocks = ["0.0.0.0/0"]
+      cidr_blocks = ["172.31.0.0/20"]
       from_port   = 8036
       to_port     = 8036
       protocol    = "tcp"
@@ -75,7 +76,7 @@
     },
     {
       type        = "egress"
-      cidr_blocks = ["0.0.0.0/0"]
+      cidr_blocks = ["172.31.0.0/20"]
       from_port   = 8080
       to_port     = 8080
       protocol    = "tcp"
